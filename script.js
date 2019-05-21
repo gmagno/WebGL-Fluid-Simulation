@@ -52,7 +52,7 @@ if (!ext.supportLinearFiltering)
     config.BLOOM = false;
 }
 
-startGUI();
+//startGUI();
 
 function getWebGLContext (canvas) {
     const params = { alpha: true, depth: false, stencil: false, antialias: false, preserveDrawingBuffer: false };
@@ -91,11 +91,6 @@ function getWebGLContext (canvas) {
         formatRG = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
         formatR = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
     }
-
-    if (formatRGBA == null)
-        ga('send', 'event', isWebGL2 ? 'webgl2' : 'webgl', 'not supported');
-    else
-        ga('send', 'event', isWebGL2 ? 'webgl2' : 'webgl', 'supported');
 
     return {
         gl,
